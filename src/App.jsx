@@ -5,7 +5,11 @@ function Timer() {
 
   useEffect(() => {
     const timerId = setInterval(() => {
-      setCount(count - 1);
+      console.log('interval runnning');
+      setCount((prevCount) => {
+        console.log(prevCount - 1)
+        return prevCount - 1
+      });
     }, 1000);
   }
     , []);
